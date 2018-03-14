@@ -38,11 +38,12 @@ namespace cam_aforge1
             this.label2 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.ctrl = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.Circle = new System.Windows.Forms.Button();
             this.countLabel = new System.Windows.Forms.Label();
             this.countDisp = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.Pen = new System.Windows.Forms.Button();
+            this.Line = new System.Windows.Forms.Button();
+            this.Undo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.viewFinder)).BeginInit();
             this.fps.SuspendLayout();
             this.SuspendLayout();
@@ -60,7 +61,6 @@ namespace cam_aforge1
             this.viewFinder.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.viewFinder.TabIndex = 0;
             this.viewFinder.TabStop = false;
-            this.viewFinder.Click += new System.EventHandler(this.viewFinder_Click);
             // 
             // vidSrc
             // 
@@ -131,7 +131,7 @@ namespace cam_aforge1
             // 
             // ctrl
             // 
-            this.ctrl.Location = new System.Drawing.Point(16, 122);
+            this.ctrl.Location = new System.Drawing.Point(17, 122);
             this.ctrl.Margin = new System.Windows.Forms.Padding(4);
             this.ctrl.Name = "ctrl";
             this.ctrl.Size = new System.Drawing.Size(91, 38);
@@ -140,22 +140,22 @@ namespace cam_aforge1
             this.ctrl.UseVisualStyleBackColor = true;
             this.ctrl.Click += new System.EventHandler(this.ctrl_Click);
             // 
-            // button3
+            // Circle
             // 
-            this.button3.Location = new System.Drawing.Point(24, 235);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(97, 43);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "Tick";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.Circle.Location = new System.Drawing.Point(17, 323);
+            this.Circle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Circle.Name = "Circle";
+            this.Circle.Size = new System.Drawing.Size(91, 38);
+            this.Circle.TabIndex = 10;
+            this.Circle.Text = "Circle";
+            this.Circle.UseVisualStyleBackColor = true;
+            this.Circle.Click += new System.EventHandler(this.button3_Click);
             // 
             // countLabel
             // 
             this.countLabel.AutoSize = true;
             this.countLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.countLabel.Location = new System.Drawing.Point(29, 294);
+            this.countLabel.Location = new System.Drawing.Point(24, 462);
             this.countLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.countLabel.Name = "countLabel";
             this.countLabel.Size = new System.Drawing.Size(95, 31);
@@ -166,43 +166,54 @@ namespace cam_aforge1
             // 
             this.countDisp.AutoSize = true;
             this.countDisp.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.countDisp.Location = new System.Drawing.Point(128, 294);
+            this.countDisp.Location = new System.Drawing.Point(129, 462);
             this.countDisp.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.countDisp.Name = "countDisp";
             this.countDisp.Size = new System.Drawing.Size(29, 31);
             this.countDisp.TabIndex = 12;
             this.countDisp.Text = "0";
             // 
-            // button1
+            // Pen
             // 
-            this.button1.Location = new System.Drawing.Point(24, 395);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Pen.Location = new System.Drawing.Point(17, 236);
+            this.Pen.Name = "Pen";
+            this.Pen.Size = new System.Drawing.Size(91, 38);
+            this.Pen.TabIndex = 14;
+            this.Pen.Text = "Pen";
+            this.Pen.UseVisualStyleBackColor = true;
+            this.Pen.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // Line
             // 
-            this.button2.Location = new System.Drawing.Point(148, 395);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "button1";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.Line.Location = new System.Drawing.Point(17, 280);
+            this.Line.Name = "Line";
+            this.Line.Size = new System.Drawing.Size(91, 38);
+            this.Line.TabIndex = 14;
+            this.Line.Text = "Line";
+            this.Line.UseVisualStyleBackColor = true;
+            this.Line.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // Undo
+            // 
+            this.Undo.Location = new System.Drawing.Point(17, 402);
+            this.Undo.Name = "Undo";
+            this.Undo.Size = new System.Drawing.Size(91, 38);
+            this.Undo.TabIndex = 15;
+            this.Undo.Text = "Undo";
+            this.Undo.UseVisualStyleBackColor = true;
+            this.Undo.Click += new System.EventHandler(this.Undo_Click);
             // 
             // GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 612);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Undo);
+            this.Controls.Add(this.Line);
+            this.Controls.Add(this.Pen);
             this.Controls.Add(this.countDisp);
             this.Controls.Add(this.countLabel);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.Circle);
             this.Controls.Add(this.ctrl);
             this.Controls.Add(this.fps);
             this.Controls.Add(this.start);
@@ -214,6 +225,7 @@ namespace cam_aforge1
             this.Name = "GUI";
             this.Text = "Orthoscope/Arthroscope Camera";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
+            this.Load += new System.EventHandler(this.GUI_Load);
             ((System.ComponentModel.ISupportInitialize)(this.viewFinder)).EndInit();
             this.fps.ResumeLayout(false);
             this.fps.PerformLayout();
@@ -233,11 +245,12 @@ namespace cam_aforge1
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button ctrl;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button Circle;
         private System.Windows.Forms.Label countLabel;
         private System.Windows.Forms.Label countDisp;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button Pen;
+        private System.Windows.Forms.Button Line;
+        private System.Windows.Forms.Button Undo;
     }
 }
 
