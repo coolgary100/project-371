@@ -44,6 +44,7 @@ namespace cam_aforge1
             this.Pen = new System.Windows.Forms.Button();
             this.Line = new System.Windows.Forms.Button();
             this.Undo = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.viewFinder)).BeginInit();
             this.fps.SuspendLayout();
             this.SuspendLayout();
@@ -203,11 +204,22 @@ namespace cam_aforge1
             this.Undo.UseVisualStyleBackColor = true;
             this.Undo.Click += new System.EventHandler(this.Undo_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(179, 280);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Object";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 612);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.Undo);
             this.Controls.Add(this.Line);
             this.Controls.Add(this.Pen);
@@ -251,6 +263,7 @@ namespace cam_aforge1
         private System.Windows.Forms.Button Pen;
         private System.Windows.Forms.Button Line;
         private System.Windows.Forms.Button Undo;
+        private System.Windows.Forms.Button button1;
     }
 }
 

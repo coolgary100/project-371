@@ -1,22 +1,37 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "scopeGUI", "scopeGUI.csproj", "{457AB072-06F7-481E-96E6-50D95CC31AED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{457AB072-06F7-481E-96E6-50D95CC31AED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{457AB072-06F7-481E-96E6-50D95CC31AED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{457AB072-06F7-481E-96E6-50D95CC31AED}.Debug|x64.ActiveCfg = Debug|x64
+		{457AB072-06F7-481E-96E6-50D95CC31AED}.Debug|x64.Build.0 = Debug|x64
+		{457AB072-06F7-481E-96E6-50D95CC31AED}.Debug|x86.ActiveCfg = Debug|x86
+		{457AB072-06F7-481E-96E6-50D95CC31AED}.Debug|x86.Build.0 = Debug|x86
 		{457AB072-06F7-481E-96E6-50D95CC31AED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{457AB072-06F7-481E-96E6-50D95CC31AED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{457AB072-06F7-481E-96E6-50D95CC31AED}.Release|x64.ActiveCfg = Release|x64
+		{457AB072-06F7-481E-96E6-50D95CC31AED}.Release|x64.Build.0 = Release|x64
+		{457AB072-06F7-481E-96E6-50D95CC31AED}.Release|x86.ActiveCfg = Release|x86
+		{457AB072-06F7-481E-96E6-50D95CC31AED}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {02706ED2-79EE-4D58-A832-DA86686D7868}
 	EndGlobalSection
 EndGlobal
