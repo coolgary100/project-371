@@ -1,0 +1,12 @@
+C:\Users\mpfte_000\OneDrive\arthroscopic_camera_source_002\cam_aforge1\bin\Release\cam_aforge1.exe.config
+C:\Users\mpfte_000\OneDrive\arthroscopic_camera_source_002\cam_aforge1\bin\Release\cam_aforge1.exe
+C:\Users\mpfte_000\OneDrive\arthroscopic_camera_source_002\cam_aforge1\bin\Release\cam_aforge1.pdb
+C:\Users\mpfte_000\OneDrive\arthroscopic_camera_source_002\cam_aforge1\bin\Release\AForge.Imaging.dll
+C:\Users\mpfte_000\OneDrive\arthroscopic_camera_source_002\cam_aforge1\bin\Release\AForge.Video.DirectShow.dll
+C:\Users\mpfte_000\OneDrive\arthroscopic_camera_source_002\cam_aforge1\bin\Release\AForge.Video.dll
+C:\Users\mpfte_000\OneDrive\arthroscopic_camera_source_002\cam_aforge1\obj\Release\scopeGUI.csprojResolveAssemblyReference.cache
+C:\Users\mpfte_000\OneDrive\arthroscopic_camera_source_002\cam_aforge1\obj\Release\cam_aforge1.GUI.resources
+C:\Users\mpfte_000\OneDrive\arthroscopic_camera_source_002\cam_aforge1\obj\Release\cam_aforge1.Properties.Resources.resources
+C:\Users\mpfte_000\OneDrive\arthroscopic_camera_source_002\cam_aforge1\obj\Release\scopeGUI.csproj.GenerateResource.Cache
+C:\Users\mpfte_000\OneDrive\arthroscopic_camera_source_002\cam_aforge1\obj\Release\cam_aforge1.exe
+C:\Users\mpfte_000\OneDrive\arthroscopic_camera_source_002\cam_aforge1\obj\Release\cam_aforge1.pdb

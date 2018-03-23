@@ -1,0 +1,72 @@
+D:\ELEC 371 - Camera\cam_aforge1\obj\Debug\cam_aforge1.csprojResolveAssemblyReference.cache
+D:\ELEC 371 - Camera\cam_aforge1\obj\Debug\cam_aforge1.Form1.resources
+D:\ELEC 371 - Camera\cam_aforge1\obj\Debug\cam_aforge1.Properties.Resources.resources
+D:\ELEC 371 - Camera\cam_aforge1\obj\Debug\cam_aforge1.csproj.GenerateResource.Cache
+D:\ELEC 371 - Camera\cam_aforge1\bin\Debug\cam_aforge1.exe
+D:\ELEC 371 - Camera\cam_aforge1\bin\Debug\cam_aforge1.pdb
+D:\ELEC 371 - Camera\cam_aforge1\bin\Debug\AForge.Video.DirectShow.dll
+D:\ELEC 371 - Camera\cam_aforge1\bin\Debug\AForge.Video.dll
+D:\ELEC 371 - Camera\cam_aforge1\obj\Debug\cam_aforge1.exe
+D:\ELEC 371 - Camera\cam_aforge1\obj\Debug\cam_aforge1.pdb
+C:\Users\mpfte_000\SkyDrive\arthroscopic_camera_source_001\cam_aforge1\obj\Debug\cam_aforge1.exe
+C:\Users\mpfte_000\SkyDrive\arthroscopic_camera_source_001\cam_aforge1\obj\Debug\cam_aforge1.pdb
+C:\Users\mpfte_000\SkyDrive\arthroscopic_camera_source_001\cam_aforge1\bin\Debug\cam_aforge1.exe
+C:\Users\mpfte_000\SkyDrive\arthroscopic_camera_source_001\cam_aforge1\bin\Debug\cam_aforge1.pdb
+C:\Users\mpfte_000\SkyDrive\arthroscopic_camera_source_001\cam_aforge1\bin\Debug\AForge.Video.DirectShow.dll
+C:\Users\mpfte_000\SkyDrive\arthroscopic_camera_source_001\cam_aforge1\bin\Debug\AForge.Video.dll
+C:\Users\mpfte_000\SkyDrive\arthroscopic_camera_source_001\cam_aforge1\obj\Debug\cam_aforge1.csprojResolveAssemblyReference.cache
+C:\Users\mpfte_000\SkyDrive\arthroscopic_camera_source_001\cam_aforge1\obj\Debug\cam_aforge1.Form1.resources
+C:\Users\mpfte_000\SkyDrive\arthroscopic_camera_source_001\cam_aforge1\obj\Debug\cam_aforge1.Properties.Resources.resources
+C:\Users\mpfte_000\SkyDrive\arthroscopic_camera_source_001\cam_aforge1\obj\Debug\cam_aforge1.csproj.GenerateResource.Cache
+C:\Users\mpfte_000\OneDrive\arthroscopic_camera_source_001\cam_aforge1\obj\Debug\cam_aforge1.exe
+C:\Users\mpfte_000\OneDrive\arthroscopic_camera_source_001\cam_aforge1\obj\Debug\cam_aforge1.pdb
+C:\Users\mpfte_000\OneDrive\arthroscopic_camera_source_001\cam_aforge1\bin\Debug\cam_aforge1.exe
+C:\Users\mpfte_000\OneDrive\arthroscopic_camera_source_001\cam_aforge1\bin\Debug\cam_aforge1.pdb
+C:\Users\mpfte_000\OneDrive\arthroscopic_camera_source_001\cam_aforge1\bin\Debug\AForge.Video.DirectShow.dll
+C:\Users\mpfte_000\OneDrive\arthroscopic_camera_source_001\cam_aforge1\bin\Debug\AForge.Video.dll
+C:\Users\mpfte_000\OneDrive\arthroscopic_camera_source_001\cam_aforge1\bin\Debug\AForge.dll
+C:\Users\mpfte_000\OneDrive\arthroscopic_camera_source_001\cam_aforge1\bin\Debug\AForge.xml
+C:\Users\mpfte_000\OneDrive\arthroscopic_camera_source_001\cam_aforge1\obj\Debug\cam_aforge1.csprojResolveAssemblyReference.cache
+C:\Users\mpfte_000\OneDrive\arthroscopic_camera_source_001\cam_aforge1\obj\Debug\cam_aforge1.Form1.resources
+C:\Users\mpfte_000\OneDrive\arthroscopic_camera_source_001\cam_aforge1\obj\Debug\cam_aforge1.Properties.Resources.resources
+C:\Users\mpfte_000\OneDrive\arthroscopic_camera_source_001\cam_aforge1\obj\Debug\cam_aforge1.csproj.GenerateResource.Cache
+C:\Users\mpfte_000\OneDrive\arthroscopic_camera_source_001\cam_aforge1\bin\Debug\AForge.Imaging.dll
+C:\Users\mpfte_000\OneDrive\arthroscopic_camera_source_001\cam_aforge1\bin\Debug\AForge.Math.dll
+C:\Users\mpfte_000\OneDrive\arthroscopic_camera_source_001\cam_aforge1\bin\Debug\AForge.Math.xml
+C:\Users\mpfte_000\SkyDrive\arthroscopic_camera_source_001\cam_aforge1\bin\Debug\AForge.Imaging.dll
+C:\Users\mpfte_000\SkyDrive\arthroscopic_camera_source_001\cam_aforge1\bin\Debug\AForge.dll
+C:\Users\mpfte_000\SkyDrive\arthroscopic_camera_source_001\cam_aforge1\bin\Debug\AForge.Math.dll
+C:\Users\mpfte_000\SkyDrive\arthroscopic_camera_source_001\cam_aforge1\bin\Debug\AForge.xml
+C:\Users\mpfte_000\SkyDrive\arthroscopic_camera_source_001\cam_aforge1\bin\Debug\AForge.Math.xml
+C:\Users\mpfte_000\SkyDrive\arthroscopic_camera_source_002\cam_aforge1\obj\Debug\cam_aforge1.exe
+C:\Users\mpfte_000\SkyDrive\arthroscopic_camera_source_002\cam_aforge1\obj\Debug\cam_aforge1.pdb
+C:\Users\mpfte_000\SkyDrive\arthroscopic_camera_source_002\cam_aforge1\bin\Debug\cam_aforge1.exe
+C:\Users\mpfte_000\SkyDrive\arthroscopic_camera_source_002\cam_aforge1\bin\Debug\cam_aforge1.pdb
+C:\Users\mpfte_000\SkyDrive\arthroscopic_camera_source_002\cam_aforge1\bin\Debug\AForge.Imaging.dll
+C:\Users\mpfte_000\SkyDrive\arthroscopic_camera_source_002\cam_aforge1\bin\Debug\AForge.Video.DirectShow.dll
+C:\Users\mpfte_000\SkyDrive\arthroscopic_camera_source_002\cam_aforge1\bin\Debug\AForge.Video.dll
+C:\Users\mpfte_000\SkyDrive\arthroscopic_camera_source_002\cam_aforge1\bin\Debug\AForge.dll
+C:\Users\mpfte_000\SkyDrive\arthroscopic_camera_source_002\cam_aforge1\bin\Debug\AForge.Math.dll
+C:\Users\mpfte_000\SkyDrive\arthroscopic_camera_source_002\cam_aforge1\bin\Debug\AForge.xml
+C:\Users\mpfte_000\SkyDrive\arthroscopic_camera_source_002\cam_aforge1\bin\Debug\AForge.Math.xml
+C:\Users\mpfte_000\SkyDrive\arthroscopic_camera_source_002\cam_aforge1\obj\Debug\cam_aforge1.csprojResolveAssemblyReference.cache
+C:\Users\mpfte_000\SkyDrive\arthroscopic_camera_source_002\cam_aforge1\obj\Debug\cam_aforge1.Properties.Resources.resources
+C:\Users\mpfte_000\SkyDrive\arthroscopic_camera_source_002\cam_aforge1\obj\Debug\cam_aforge1.csproj.GenerateResource.Cache
+C:\Users\mpfte_000\SkyDrive\arthroscopic_camera_source_002\cam_aforge1\bin\Debug\cam_aforge1.exe.config
+C:\Users\mpfte_000\OneDrive\arthroscopic_camera_source_002\cam_aforge1\bin\Debug\cam_aforge1.exe.config
+C:\Users\mpfte_000\OneDrive\arthroscopic_camera_source_002\cam_aforge1\obj\Debug\cam_aforge1.exe
+C:\Users\mpfte_000\OneDrive\arthroscopic_camera_source_002\cam_aforge1\obj\Debug\cam_aforge1.pdb
+C:\Users\mpfte_000\OneDrive\arthroscopic_camera_source_002\cam_aforge1\bin\Debug\cam_aforge1.exe
+C:\Users\mpfte_000\OneDrive\arthroscopic_camera_source_002\cam_aforge1\bin\Debug\cam_aforge1.pdb
+C:\Users\mpfte_000\OneDrive\arthroscopic_camera_source_002\cam_aforge1\bin\Debug\AForge.Imaging.dll
+C:\Users\mpfte_000\OneDrive\arthroscopic_camera_source_002\cam_aforge1\bin\Debug\AForge.Video.DirectShow.dll
+C:\Users\mpfte_000\OneDrive\arthroscopic_camera_source_002\cam_aforge1\bin\Debug\AForge.Video.dll
+C:\Users\mpfte_000\OneDrive\arthroscopic_camera_source_002\cam_aforge1\bin\Debug\AForge.dll
+C:\Users\mpfte_000\OneDrive\arthroscopic_camera_source_002\cam_aforge1\bin\Debug\AForge.Math.dll
+C:\Users\mpfte_000\OneDrive\arthroscopic_camera_source_002\cam_aforge1\bin\Debug\AForge.xml
+C:\Users\mpfte_000\OneDrive\arthroscopic_camera_source_002\cam_aforge1\bin\Debug\AForge.Math.xml
+C:\Users\mpfte_000\OneDrive\arthroscopic_camera_source_002\cam_aforge1\obj\Debug\cam_aforge1.csprojResolveAssemblyReference.cache
+C:\Users\mpfte_000\OneDrive\arthroscopic_camera_source_002\cam_aforge1\obj\Debug\cam_aforge1.Properties.Resources.resources
+C:\Users\mpfte_000\OneDrive\arthroscopic_camera_source_002\cam_aforge1\obj\Debug\cam_aforge1.csproj.GenerateResource.Cache
+C:\Users\mpfte_000\OneDrive\arthroscopic_camera_source_002\cam_aforge1\obj\Debug\cam_aforge1.GUI.resources
+C:\Users\mpfte_000\SkyDrive\arthroscopic_camera_source_002\cam_aforge1\obj\Debug\cam_aforge1.GUI.resources
