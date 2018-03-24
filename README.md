@@ -2,5 +2,5 @@
 2018 spring project
 
 
-Setting
-use Debugger x64-.net 3.5- unset debug option "justmy code" 
+Settings:
+  use Debugger x64-.net 3.5- unset debug option "justmy code" 
