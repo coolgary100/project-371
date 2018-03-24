@@ -3,4 +3,4 @@
 
 
 Settings:
-  use Debugger x64-.net 3.5- unset debug option "justmy code" 
+  use Debugger x64-.net 4.5- unset debug option "justmy code" 
