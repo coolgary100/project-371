@@ -41,10 +41,13 @@ namespace cam_aforge1
                 new MotionAreaHighlighting());
         int tickCount = 0;
         int drawinglock = 0;
+        int bloodSize = 10;
+        int opaqCons = 10;
         List<int[]> pts = new List<int[]>();
+        Point[] trackings ;
         int shape; //0(free) 1(line) 2(circle)
         Pen drawingPen = new Pen(Color.Black, 3);
-        Pen objPen = new Pen(Color.Blue, 3);
+        Pen objPen = new Pen(Color.Red, 3);
         Pen curserPen = new Pen(Color.Red, 3);
 
         //feature
@@ -56,11 +59,12 @@ namespace cam_aforge1
         public VectorOfVectorOfDMatch matches = new VectorOfVectorOfDMatch();
         public Mat mask;
         public Mat homography;
-        public ORBDetector ORBCPU = new ORBDetector(200);
-        private static Mat obj = CvInvoke.Imread("Object.JPG", Emgu.CV.CvEnum.ImreadModes.AnyColor);
-        public Image<Bgr, Byte> objImage = obj.ToImage<Bgr, Byte>();
+        public Mat totHomography;
+        public ORBDetector ORBCPU = new ORBDetector(1000);
+        private Mat obj ;
+        public Image<Bgr, Byte> objImage ;
         public UMat objDescriptors = new UMat();
-        public UMat uObjImage = obj.GetUMat(AccessType.Read);
+        public UMat uObjImage;
         public UMat observedDescriptors = new UMat();
         public UMat uObservedImage = new UMat();
         public VectorOfKeyPoint observedKeyPoints = new VectorOfKeyPoint();
@@ -159,9 +163,8 @@ namespace cam_aforge1
             
             Image<Bgr, Byte> image = new Image<Bgr, Byte>(img);
             Mat imgmodel = image.Mat;
+            tickCount++;
 
-
-           
             try
             {
                 imgmodel = Draw(imgmodel);
@@ -172,9 +175,37 @@ namespace cam_aforge1
                 System.Drawing.Rectangle rec = new System.Drawing.Rectangle(mouse[0], mouse[1], 5, 5);
                 myCanvas.g.DrawEllipse(curserPen, rec);
 
-                if (objwidth != 0 && objheight != 0)
+               
+                if (button1.Text == "Load")
                 {
                     myCanvas.g.DrawRectangle(objPen, Math.Min(objectside[0], objectside[0] + objwidth), Math.Min(objectside[1], objectside[1] + objheight), Math.Abs(objwidth), Math.Abs(objheight));
+                }
+                else if (button1.Text == "UnLoad")
+                {
+                    int i;
+                    for( i=0; i < trackings.Length && 0 <= trackings[i].X; i++)
+                    {
+                    }
+                    Point[] drawtracking = new Point[i-1];
+                    int j=0;
+                    for ( i = 0; i < drawtracking.Length; j++)
+                    {
+                        drawtracking[j] = trackings[i];
+                        //if (i + 2 < drawtracking.Length && 10+3*Math.Abs(trackings[i + 2].X - trackings[i].X) + 3*Math.Abs(trackings[i + 2].Y - trackings[i].Y) - Math.Abs(trackings[i + 1].X - trackings[i].X) - Math.Abs(trackings[i + 1].Y - trackings[i].Y) < 0)
+                        //{
+                         //   i++;
+                        //}
+                        i++;
+                    }
+                    /*for (i = 0; i<drawtracking.Length && 0 < drawtracking[i].X; i++)
+                    {
+                    }
+                    Point[] drawtracking2 = new Point[i - 1];
+                    for (i = 0; i < drawtracking2.Length; i++)
+                    {
+                        drawtracking2[i] = drawtracking[i];
+                    }*/
+                    myCanvas.g.DrawLines(objPen, drawtracking);
                 }
 
                 while (drawinglock != 0) { }
@@ -199,6 +230,17 @@ namespace cam_aforge1
                             myCanvas.g.DrawLines(drawingPen, curve);
                         }
                     }
+
+                    if (point[0] == 6)//free drawing
+                    {
+                        int i;
+                        int tic;
+                        for (i = 2; 2 * i + 1 < point.Length && point[2 * i + 1] >= 0; i++) 
+                        {
+                            tic = tickCount - point[1];
+                            myCanvas.g.FillEllipse(new SolidBrush(Color.FromArgb(point[3], 131, 3, 3)), point[2 * i] - (float)(tic * .5 + point[2] / 2.0), point[2 * i + 1] - (float)(tic * .5 + point[2] / 2.0), (float)(tic * 1 + point[2]), (float)(tic * 1 + point[2]));
+                        }
+                    }
                     if (point[0] == 1)//draw line
                     {
                         myCanvas.g.DrawLine(drawingPen, point[1], point[2], point[3], point[4]);
@@ -208,15 +250,18 @@ namespace cam_aforge1
                         myCanvas.g.DrawEllipse(drawingPen, point[1] - point[3], point[2] - point[3], 2 * point[3], 2 * point[3]);
                     }
                 }
-                drawinglock = 0;
+
+                
+                
             }
-            catch
+            catch 
             {
 
             }
-            
-                        
-           // double h = detector.ProcessFrame(img);
+
+            drawinglock = 0;
+
+            // double h = detector.ProcessFrame(img);
             //System.Console.WriteLine(h);
 
             //myCanvas.g.TranslateTransform(img.Width / 2, img.Height / 2);
@@ -297,18 +342,32 @@ namespace cam_aforge1
                         int[] pt = new int[] { 2, Xm, Ym, 0 };
                         pts.Add(pt);
                     }
-                    else if (shape == 5 )
+                    else if (shape == 5 )//object
                     {
                         objectside = new int[] { Xm, Ym};
                         objwidth = 0;
                         objheight = 0;
                     }
-                    
+                    else if (shape == 6)//free drawing
+                    {
+                        int[] pt = new int[12];
+                        for (int i = 0; i < pt.Length; i++)
+                        {
+                            pt[i] = -1;
+                        }
+                        pt[0] = 6;
+                        pt[1] = tickCount;
+                        pt[2] = bloodSize;
+                        pt[3] = opaqCons;
+                        pt[4] = Xm;
+                        pt[5] = Ym;
+                        pts.Add(pt);
+                    }
+
 
                 }
                 else if (e.Button == MouseButtons.Right)
                 {
-                    
                 }
                 MouseDownLocation = e.Location;
             }
@@ -339,7 +398,7 @@ namespace cam_aforge1
                         objheight = (int)(Ym - objectside[1]);
                         roi = new System.Drawing.Rectangle(Math.Min(objectside[0], objectside[0] + objwidth), Math.Min(objectside[1], objectside[1] + objheight), Math.Abs(objwidth), Math.Abs(objheight));
                     }
-                    else if(shape==0 || shape == 1 || shape == 2)
+                    else if(shape==0 || shape == 1 || shape == 2|| shape == 6)
                     {
                         int[] pt = pts[pts.Count - 1];
 
@@ -370,7 +429,6 @@ namespace cam_aforge1
                                 pt[i] = Xm;
                                 pt[i + 1] = Ym;
                             }
-
                         }
                         else if (pt[0] == 1) // line
                         {
@@ -381,6 +439,35 @@ namespace cam_aforge1
                         {
                             int radius = (int)Math.Sqrt((1.0 * Xm - pt[1]) * (1.0 * Xm - pt[1]) + (1.0 * Ym - pt[2]) * (1.0 * Ym - pt[2]));
                             pt[3] = radius;
+                        }
+                        else if (pt[0] == 6)//free drawing
+                        {
+                            int i;
+                            if (pt[pt.Length - 1] >= 0)//increse the size
+                            {
+                                int[] newpt = new int[2 * pt.Length];
+                                for (i = 0; i < pt.Length; i++)
+                                {
+                                    newpt[i] = pt[i];
+                                }
+                                newpt[i] = Xm;
+                                newpt[i + 1] = Ym;
+                                for (i = i + 2; i < newpt.Length; i++)
+                                {
+                                    newpt[i] = -1;
+                                }
+                                pts.RemoveAt(pts.Count - 1);
+                                pts.Add(newpt);
+                            }
+                            else
+                            {
+                                for (i = 0; pt[i] >= 0; i++)
+                                {
+                                }
+                                pt[i] = Xm;
+                                pt[i + 1] = Ym;
+                            }
+
                         }
                     }
                     
@@ -412,25 +499,15 @@ namespace cam_aforge1
         private void button3_Click(object sender, EventArgs e)
         {
             shape = 2;//circle
-            //Step 7: Let's activate this button. Uncomment lines 143-144 to add functionality
-            //to the button.
-            //tickCount++;
-            //countDisp.Text = tickCount.ToString();
-
-            //Step 8: The button_Click method can be used to call a method that you wrote
-            //on the GUIElements Class. Uncomment line 149 to call the ButtonWasClicked method
-            //from GUIElements.
-            //myCanvas.Run();
-
-
-            //Note that the syntax for calling methods in the GUIElements class is always in the form of
-            //`myCanvas.NameOfMethod();`.
         }
 
         private void Undo_Click(object sender, EventArgs e)
         {
             shape = 10;
-            pts.RemoveAt(pts.Count - 1);
+            if (pts.Count > 0)
+            {
+                pts.RemoveAt(pts.Count - 1);
+            }
         }
 
         private void FindMatch(Mat observedImage)
@@ -439,7 +516,7 @@ namespace cam_aforge1
             mask = new Mat();
             homography = null;
             matches = new VectorOfVectorOfDMatch();
-            uObservedImage = observedImage.GetUMat(AccessType.Read);
+            uObservedImage = observedImage.GetUMat(AccessType.ReadWrite);
                
             // extract features from the observed image
             ORBCPU.DetectAndCompute(uObservedImage, null, observedKeyPoints, observedDescriptors, false);
@@ -455,51 +532,109 @@ namespace cam_aforge1
                 int nonZeroCount = CvInvoke.CountNonZero(mask);
                 if (nonZeroCount >= 4)
                 {
-                    nonZeroCount = Features2DToolbox.VoteForSizeAndOrientation(objKeyPoints, observedKeyPoints,
-                        matches, mask, 1.5, 20);
+                    //nonZeroCount = Features2DToolbox.VoteForSizeAndOrientation(objKeyPoints, observedKeyPoints,
+                     //matches, mask, 1, 2);
                     if (nonZeroCount >= 4)
                         homography = Features2DToolbox.GetHomographyMatrixFromMatchedFeatures(objKeyPoints,
-                            observedKeyPoints, matches, mask, 2);
+                            observedKeyPoints, matches, mask, 3);
                 }
             }
         }
 
         private Mat Draw( Mat observedImage)
         {
-            FindMatch(observedImage);
-            Mat result = new Mat();
-
-            if (matches.Size > 2)
+            if (button1.Text == "UnLoad")
             {
-                
-                //Draw the matched keypoints
-               
-                Features2DToolbox.DrawMatches(objImage, objKeyPoints, observedImage, observedKeyPoints, matches, result, new MCvScalar(255, 255, 255), new MCvScalar(255, 255, 255), mask);
+                FindMatch(observedImage);
+                Mat result = new Mat();
 
-                if (homography != null)
+                if (matches.Size > 2)
                 {
-                    //draw a rectangle along the projected model
 
-                    System.Drawing.Rectangle rect = new System.Drawing.Rectangle(Point.Empty, objImage.Size);
-                    PointF[] pts = new PointF[]
-                    {
-                new PointF(rect.Left, rect.Bottom),
-                new PointF(rect.Right, rect.Bottom),
-                new PointF(rect.Right, rect.Top),
-                new PointF(rect.Left, rect.Top)
-                    };
-                    pts = CvInvoke.PerspectiveTransform(pts, homography);
+                    //Draw the matched keypoints
 
-                    Point[] points = Array.ConvertAll<PointF, Point>(pts, Point.Round);
-                    using (VectorOfPoint vp = new VectorOfPoint(points))
+                    Features2DToolbox.DrawMatches(objImage, objKeyPoints, observedImage, observedKeyPoints, matches, result, new MCvScalar(255, 255, 255), new MCvScalar(255, 255, 255), mask);
+                    //Bgr rgb5 = new Bgr(250, 250, 250);
+                    //Features2DToolbox.DrawKeypoints(observedImage, observedKeyPoints, observedImage, rgb5);
+                    int i;
+                    float X = 0;
+                    float Y = 0;
+                    int count = 0;
+                    for ( i = 0; i < matches.Size; i++)
                     {
-                        CvInvoke.Polylines(result, vp, true, new MCvScalar(255, 0, 0, 255), 5);
+                        if (mask.GetData(i)[0] == 1)
+                        {
+                            X += observedKeyPoints[matches[i][0].QueryIdx].Point.X - objKeyPoints[matches[i][0].TrainIdx].Point.X;
+                            Y += observedKeyPoints[matches[i][0].QueryIdx].Point.Y - objKeyPoints[matches[i][0].TrainIdx].Point.Y;
+                            count++;
+                        }
                     }
+                    X = X / count + (float)(objwidth / 2.0);
+                    Y = Y / count + (float)(objheight / 2.0);
+
+                   
+                    if (trackings[trackings.Length - 1].X >= 0)
+                    {
+                        Point[] newtrackings = new Point[2 * trackings.Length + 1];
+                        for (i = 0; i < trackings.Length; i++)
+                        {
+                            newtrackings[i] = trackings[i];
+                        }
+                        newtrackings[i].X = (int)X;
+                        newtrackings[i].Y = (int)Y;
+                        for (i++; i < newtrackings.Length; i++)
+                        {
+                            newtrackings[i].X = -1;
+                            newtrackings[i].Y = -1;
+                        }
+                        trackings = newtrackings;
+                    }
+                    else
+                    {
+                        for (i = 0; trackings[i].X >= 0; i++)
+                        {
+                        }
+                        trackings[i].X = (int)X;
+                        trackings[i].Y = (int)Y;
+                    }
+
+                    if (homography != null)
+                    {
+                        //draw a rectangle along the projected model
+
+                        System.Drawing.Rectangle rect = new System.Drawing.Rectangle(Point.Empty, objImage.Size);
+                        PointF[] pts = new PointF[]
+                        {
+                        new PointF(rect.Left, rect.Bottom),
+                        new PointF(rect.Right, rect.Bottom),
+                        new PointF(rect.Right, rect.Top),
+                        new PointF(rect.Left, rect.Top)
+                        };
+                        pts = CvInvoke.PerspectiveTransform(pts, homography);
+
+                        Point[] points = Array.ConvertAll<PointF, Point>(pts, Point.Round);
+                        using (VectorOfPoint vp = new VectorOfPoint(points))
+                        {
+
+                            //CvInvoke.Polylines(observedImage, vp, true, new MCvScalar(255, 0, 0, 255), 5);
+                           }
+                    }
+                    float a = 2;
+                    CvInvoke.Ellipse(result, new RotatedRect(new PointF(X, Y), new SizeF(10, 10), a), new MCvScalar(0, 250, 255, 255));
+
                     return result;
                 }
+
             }
-            Bgr rgb1 = new Bgr(250, 250, 250);
-            Features2DToolbox.DrawKeypoints(observedImage, observedKeyPoints, observedImage, rgb1);
+            else if (button1.Text == "Load")
+            {
+                uObservedImage = observedImage.GetUMat(AccessType.ReadWrite);
+                // extract features from the observed image
+                ORBCPU.DetectAndCompute(uObservedImage, null, observedKeyPoints, observedDescriptors, false);
+
+                Bgr rgb1 = new Bgr(250, 250, 250);
+                Features2DToolbox.DrawKeypoints(observedImage, observedKeyPoints, observedImage, rgb1);
+            }
             return observedImage;
         }
 
@@ -554,18 +689,33 @@ namespace cam_aforge1
         {
             if (button1.Text == "Load") 
             {
+                trackings = new Point[11];
+                for (int i = 0; i < trackings.Length; i++)
+                {
+                    trackings[i].X= -1;
+                    trackings[i].Y = -1;
+                }
+
                 button1.Text = "UnLoad";
+                ORBCPU = new ORBDetector(400);
                 objImage = uObservedImage.ToImage<Bgr, Byte>();
                 objImage.ROI = roi;
-                uObjImage = objImage.Mat.GetUMat(AccessType.Read);
+                uObjImage = objImage.Mat.GetUMat(AccessType.ReadWrite);
                 ORBCPU.DetectAndCompute(uObjImage, null, objKeyPoints, objDescriptors, false);
-                objheight = 0;
-                objwidth = 0;
-                
-            }else if (button1.Text == "UnLoad" )
+                shape = 20;
+                ORBCPU = new ORBDetector(8000);
+            }
+            else if (button1.Text == "UnLoad" )
             {
+                trackings = new Point[11];
+                for (int i = 0; i < trackings.Length; i++)
+                {
+                    trackings[i].X = -1;
+                    trackings[i].Y = -1;
+                }
                 objKeyPoints = new VectorOfKeyPoint();
                 objDescriptors = new UMat();
+                objheight = 0;
                 objwidth = 0;
                 shape = 20;
                 button1.Text = "Object";
@@ -575,6 +725,31 @@ namespace cam_aforge1
                 button1.Text = "Load";
                 shape = 5;
             }
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            tickCount = 0;
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            opaqCons = trackbar1.Value;
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            shape = 6;//blood
+        }
+
+        private void countLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void trackBar2_Scroll(object sender, EventArgs e)
+        {
+            bloodSize = trackBar2.Value;
         }
     }
 }
