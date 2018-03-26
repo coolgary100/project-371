@@ -168,17 +168,22 @@ namespace cam_aforge1
         //Generally don't have to change this
         private void video_NewFrame(object sender, NewFrameEventArgs eventArgs)
         {
-            Bitmap img = (Bitmap)eventArgs.Frame.Clone();
             
-            Image<Bgr, Byte> image = new Image<Bgr, Byte>(img);
-            Mat imgmodel = image.Mat;
-            tickCount++;
-
             try
             {
+
+                Bitmap img = (Bitmap)eventArgs.Frame.Clone();
+
+                Image<Bgr, Byte> image = new Image<Bgr, Byte>(img);
+                Mat imgmodel = image.Mat;
+                tickCount++;
+
                 imgmodel = Draw(imgmodel);
                 img = imgmodel.Bitmap;
                 myCanvas.g = Graphics.FromImage(img);
+
+                while (drawinglock != 0) { }
+                drawinglock = 1;
 
                 int[] mouse = getMouseCoordinates(img);
                 System.Drawing.Rectangle rec = new System.Drawing.Rectangle(mouse[0], mouse[1], 5, 5);
@@ -217,9 +222,7 @@ namespace cam_aforge1
                     myCanvas.g.DrawLines(objPen, drawtracking);
                 }
 
-                while (drawinglock != 0) { }
-                drawinglock = 1;
-
+                
                 foreach (int[] point in pts)
                 {
                     if (point[0] == 0)//free drawing
@@ -261,7 +264,7 @@ namespace cam_aforge1
                 }
 
 
-                drawinglock = 0;
+                
 
                 // double h = detector.ProcessFrame(img);
                 //System.Console.WriteLine(h);
@@ -283,9 +286,10 @@ namespace cam_aforge1
                 myCanvas.Run();
                 viewFinder.Image = img;
                 myCanvas.g.Dispose();
+                drawinglock = 0;
 
             }
-            catch (System.InvalidOperationException)
+            catch 
             {
 
             }
@@ -519,10 +523,14 @@ namespace cam_aforge1
         private void Undo_Click(object sender, EventArgs e)
         {
             shape = 10;
+            while (drawinglock != 0) { }
+            drawinglock = 1;
+
             if (pts.Count > 0)
             {
                 pts.RemoveAt(pts.Count - 1);
             }
+            drawinglock = 0;
         }
 
         private void FindMatch(Mat observedImage)
@@ -777,6 +785,7 @@ namespace cam_aforge1
 
         private void button4_Click(object sender, EventArgs e)
         {
+            saveFil
             if (saveFileDialog1.ShowDialog() == DialogResult.Cancel)
                 return;
             else
@@ -790,8 +799,8 @@ namespace cam_aforge1
                 catch (System.IO.IOException)
                 {
                     System.Windows.Forms.MessageBox.Show("Unable to Save File.");
-                    return;
                 }
+                return;
             }
         }
     }

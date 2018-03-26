@@ -297,6 +297,10 @@ namespace cam_aforge1
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.InitialDirectory = "C://";
+            // 
             // GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
