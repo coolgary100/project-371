@@ -518,10 +518,17 @@ namespace cam_aforge1
 
         private void Undo_Click(object sender, EventArgs e)
         {
-            shape = 10;
-            if (pts.Count > 0)
+            try
             {
-                pts.RemoveAt(pts.Count - 1);
+                shape = 10;
+                if (pts.Count > 0)
+                {
+                    pts.RemoveAt(pts.Count - 1);
+                }
+            }
+            catch (System.InvalidOperationException)
+            {
+
             }
         }
 
