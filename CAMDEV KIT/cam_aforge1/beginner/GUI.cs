@@ -791,7 +791,7 @@ namespace cam_aforge1
 
         private void button4_Click(object sender, EventArgs e)
         {
-            saveFil
+            
             if (saveFileDialog1.ShowDialog() == DialogResult.Cancel)
                 return;
             else
