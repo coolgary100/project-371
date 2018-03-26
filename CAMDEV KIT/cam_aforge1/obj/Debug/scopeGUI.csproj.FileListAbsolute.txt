@@ -73,3 +73,28 @@ C:\Users\koosha\Desktop\4th yr\spring 2018\elec 371\project-371\CAMDEV KIT\cam_a
 C:\Users\koosha\Desktop\4th yr\spring 2018\elec 371\project-371\CAMDEV KIT\cam_aforge1\bin\Debug\Emgu.CV.World.dll
 C:\Users\koosha\Desktop\4th yr\spring 2018\elec 371\project-371\CAMDEV KIT\cam_aforge1\bin\Debug\ZedGraph.dll
 C:\Users\koosha\Desktop\4th yr\spring 2018\elec 371\project-371\CAMDEV KIT\cam_aforge1\bin\Debug\Antlr3.Runtime.dll
+C:\Users\koosha\Desktop\4th yr\spring 2018\project-371\CAMDEV KIT\cam_aforge1\bin\Debug\cam_aforge1.exe.config
+C:\Users\koosha\Desktop\4th yr\spring 2018\project-371\CAMDEV KIT\cam_aforge1\bin\Debug\cam_aforge1.exe
+C:\Users\koosha\Desktop\4th yr\spring 2018\project-371\CAMDEV KIT\cam_aforge1\bin\Debug\cam_aforge1.pdb
+C:\Users\koosha\Desktop\4th yr\spring 2018\project-371\CAMDEV KIT\cam_aforge1\bin\Debug\AForge.Imaging.dll
+C:\Users\koosha\Desktop\4th yr\spring 2018\project-371\CAMDEV KIT\cam_aforge1\bin\Debug\AForge.Video.DirectShow.dll
+C:\Users\koosha\Desktop\4th yr\spring 2018\project-371\CAMDEV KIT\cam_aforge1\bin\Debug\AForge.Video.dll
+C:\Users\koosha\Desktop\4th yr\spring 2018\project-371\CAMDEV KIT\cam_aforge1\bin\Debug\AForge.Vision.dll
+C:\Users\koosha\Desktop\4th yr\spring 2018\project-371\CAMDEV KIT\cam_aforge1\bin\Debug\Antlr3.Runtime.dll
+C:\Users\koosha\Desktop\4th yr\spring 2018\project-371\CAMDEV KIT\cam_aforge1\bin\Debug\Emgu.CV.DebuggerVisualizers.VS2017.dll
+C:\Users\koosha\Desktop\4th yr\spring 2018\project-371\CAMDEV KIT\cam_aforge1\bin\Debug\Emgu.CV.UI.dll
+C:\Users\koosha\Desktop\4th yr\spring 2018\project-371\CAMDEV KIT\cam_aforge1\bin\Debug\Emgu.CV.UI.GL.dll
+C:\Users\koosha\Desktop\4th yr\spring 2018\project-371\CAMDEV KIT\cam_aforge1\bin\Debug\Emgu.CV.World.dll
+C:\Users\koosha\Desktop\4th yr\spring 2018\project-371\CAMDEV KIT\cam_aforge1\bin\Debug\ZedGraph.dll
+C:\Users\koosha\Desktop\4th yr\spring 2018\project-371\CAMDEV KIT\cam_aforge1\bin\Debug\AForge.dll
+C:\Users\koosha\Desktop\4th yr\spring 2018\project-371\CAMDEV KIT\cam_aforge1\bin\Debug\AForge.Math.dll
+C:\Users\koosha\Desktop\4th yr\spring 2018\project-371\CAMDEV KIT\cam_aforge1\bin\Debug\Microsoft.VisualStudio.DebuggerVisualizers.dll
+C:\Users\koosha\Desktop\4th yr\spring 2018\project-371\CAMDEV KIT\cam_aforge1\bin\Debug\AForge.xml
+C:\Users\koosha\Desktop\4th yr\spring 2018\project-371\CAMDEV KIT\cam_aforge1\bin\Debug\AForge.Math.xml
+C:\Users\koosha\Desktop\4th yr\spring 2018\project-371\CAMDEV KIT\cam_aforge1\obj\Debug\scopeGUI.csprojResolveAssemblyReference.cache
+C:\Users\koosha\Desktop\4th yr\spring 2018\project-371\CAMDEV KIT\cam_aforge1\obj\Debug\cam_aforge1.GUI.resources
+C:\Users\koosha\Desktop\4th yr\spring 2018\project-371\CAMDEV KIT\cam_aforge1\obj\Debug\cam_aforge1.Properties.Resources.resources
+C:\Users\koosha\Desktop\4th yr\spring 2018\project-371\CAMDEV KIT\cam_aforge1\obj\Debug\scopeGUI.csproj.GenerateResource.Cache
+C:\Users\koosha\Desktop\4th yr\spring 2018\project-371\CAMDEV KIT\cam_aforge1\obj\Debug\scopeGUI.csproj.CoreCompileInputs.cache
+C:\Users\koosha\Desktop\4th yr\spring 2018\project-371\CAMDEV KIT\cam_aforge1\obj\Debug\cam_aforge1.exe
+C:\Users\koosha\Desktop\4th yr\spring 2018\project-371\CAMDEV KIT\cam_aforge1\obj\Debug\cam_aforge1.pdb

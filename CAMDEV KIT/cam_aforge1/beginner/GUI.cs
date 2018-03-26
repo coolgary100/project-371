@@ -39,6 +39,8 @@ namespace cam_aforge1
         MotionDetector detector = new MotionDetector(
                 new SimpleBackgroundModelingDetector(),
                 new MotionAreaHighlighting());
+        int saveFlag=0;
+        System.IO.FileStream fs;
         int tickCount = 0;
         int drawinglock = 0;
         int bloodSize = 10;
@@ -251,30 +253,36 @@ namespace cam_aforge1
                     }
                 }
 
-                
-                
+
+                drawinglock = 0;
+
+                // double h = detector.ProcessFrame(img);
+                //System.Console.WriteLine(h);
+
+                //myCanvas.g.TranslateTransform(img.Width / 2, img.Height / 2);
+                // Rotate
+                //myCanvas.g.RotateTransform(30);
+                // Restore rotation point in the matrix
+                //myCanvas.g.TranslateTransform(-img.Width / 2, -img.Height / 2);
+                // Draw the image on the bitmap
+                //myCanvas.g.DrawImage(img, new Point(0, 0));
+
+                myCanvas.Run();
+                viewFinder.Image = img;
+                if (saveFlag == 1) 
+                {
+                    saveFlag = 0;
+                    img.Save(fs, System.Drawing.Imaging.ImageFormat.Jpeg);
+                    fs.Close();
+                }
+                myCanvas.g.Dispose();
+
             }
             catch 
             {
 
             }
 
-            drawinglock = 0;
-
-            // double h = detector.ProcessFrame(img);
-            //System.Console.WriteLine(h);
-
-            //myCanvas.g.TranslateTransform(img.Width / 2, img.Height / 2);
-            // Rotate
-            //myCanvas.g.RotateTransform(30);
-            // Restore rotation point in the matrix
-            //myCanvas.g.TranslateTransform(-img.Width / 2, -img.Height / 2);
-            // Draw the image on the bitmap
-            //myCanvas.g.DrawImage(img, new Point(0, 0));
-
-            myCanvas.Run();
-            viewFinder.Image = img;
-            myCanvas.g.Dispose();
         }
 
         //Generally don't have to change this
@@ -750,6 +758,34 @@ namespace cam_aforge1
         private void trackBar2_Scroll(object sender, EventArgs e)
         {
             bloodSize = trackBar2.Value;
+        }
+
+        private void button2_Click_2(object sender, EventArgs e)
+        {
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                drawingPen.Color = colorDialog1.Color;
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (saveFileDialog1.ShowDialog() == DialogResult.Cancel)
+                return;
+            else
+            {
+                try
+                {
+                    saveFlag = 1;
+                    fs = (System.IO.FileStream)saveFileDialog1.OpenFile();
+                    //Do whatever with the new path
+                }
+                catch (System.IO.IOException)
+                {
+                    System.Windows.Forms.MessageBox.Show("Unable to Save File.");
+                    return;
+                }
+            }
         }
     }
 }
