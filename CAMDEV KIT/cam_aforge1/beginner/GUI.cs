@@ -274,14 +274,14 @@ namespace cam_aforge1
                 // Draw the image on the bitmap
                 //myCanvas.g.DrawImage(img, new Point(0, 0));
 
-                myCanvas.Run();
-                viewFinder.Image = img;
-                if (saveFlag == 1) 
+                if (saveFlag == 1)
                 {
                     saveFlag = 0;
                     img.Save(fs, System.Drawing.Imaging.ImageFormat.Jpeg);
                     fs.Close();
                 }
+                myCanvas.Run();
+                viewFinder.Image = img;
                 myCanvas.g.Dispose();
 
             }
