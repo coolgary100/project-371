@@ -51,7 +51,6 @@ namespace cam_aforge1
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.button2 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
@@ -288,25 +287,13 @@ namespace cam_aforge1
             this.label4.Text = "Blood Size";
             this.label4.Click += new System.EventHandler(this.countLabel_Click);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.75F);
-            this.label3.Location = new System.Drawing.Point(20, 519);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 16);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Save";
-            this.label3.Click += new System.EventHandler(this.countLabel_Click);
-            // 
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(17, 538);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(91, 38);
             this.button4.TabIndex = 22;
-            this.button4.Text = "button4";
+            this.button4.Text = "Save";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -317,7 +304,6 @@ namespace cam_aforge1
             this.ClientSize = new System.Drawing.Size(1200, 612);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.countLabel);
@@ -375,7 +361,6 @@ namespace cam_aforge1
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;

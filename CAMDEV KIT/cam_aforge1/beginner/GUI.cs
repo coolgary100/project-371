@@ -127,34 +127,41 @@ namespace cam_aforge1
         //Generally don't have to change this
         private void start_Click(object sender, EventArgs e)
         {
-            if (start.Text == "&Start")
+            try
             {
-                if (DeviceExist)
+                if (start.Text == "&Start")
                 {
-                    videoSource = new VideoCaptureDevice(videoDevices[vidSrc.SelectedIndex].MonikerString);
-                    videoSource.NewFrame += new NewFrameEventHandler(video_NewFrame);
-                    CloseVideoSource();
-                    videoSource.DesiredFrameSize = new Size(160, 120);
-                    //videoSource.DesiredFrameRate = 10;
-                    videoSource.Start();
-                    label2.Text = "Device running...";
-                    start.Text = "&Stop";
-                    timer1.Enabled = true;
+                    if (DeviceExist)
+                    {
+                        videoSource = new VideoCaptureDevice(videoDevices[vidSrc.SelectedIndex].MonikerString);
+                        videoSource.NewFrame += new NewFrameEventHandler(video_NewFrame);
+                        CloseVideoSource();
+                        videoSource.DesiredFrameSize = new Size(160, 120);
+                        //videoSource.DesiredFrameRate = 10;
+                        videoSource.Start();
+                        label2.Text = "Device running...";
+                        start.Text = "&Stop";
+                        timer1.Enabled = true;
+                    }
+                    else
+                    {
+                        label2.Text = "Error: No Device selected.";
+                    }
                 }
                 else
                 {
-                    label2.Text = "Error: No Device selected.";
+                    if (videoSource.IsRunning)
+                    {
+                        timer1.Enabled = false;
+                        CloseVideoSource();
+                        label2.Text = "Device stopped.";
+                        start.Text = "&Start";
+                    }
                 }
             }
-            else
+            catch (System.InvalidOperationException)
             {
-                if (videoSource.IsRunning)
-                {
-                    timer1.Enabled = false;
-                    CloseVideoSource();
-                    label2.Text = "Device stopped.";
-                    start.Text = "&Start";
-                }
+                System.Windows.Forms.MessageBox.Show("Unable to Save File.");
             }
         }
 
@@ -278,7 +285,7 @@ namespace cam_aforge1
                 myCanvas.g.Dispose();
 
             }
-            catch 
+            catch (System.InvalidOperationException)
             {
 
             }
