@@ -525,10 +525,16 @@ namespace cam_aforge1
             shape = 10;
             while (drawinglock != 0) { }
             drawinglock = 1;
-
-            if (pts.Count > 0)
+            try
             {
-                pts.RemoveAt(pts.Count - 1);
+                if (pts.Count > 0)
+                {
+                    pts.RemoveAt(pts.Count - 1);
+                }
+            }
+            catch (System.InvalidOperationException)
+            {
+
             }
             drawinglock = 0;
         }
