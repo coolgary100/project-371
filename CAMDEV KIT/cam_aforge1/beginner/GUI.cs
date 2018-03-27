@@ -53,7 +53,7 @@ namespace cam_aforge1
         Pen curserPen = new Pen(Color.Red, 3);
 
         //feature
-        int[] objectside;
+        int[] objectside= { 0, 0 };
         int objwidth = 0;
         int objheight = 0;
         System.Drawing.Rectangle roi ;
@@ -245,12 +245,13 @@ namespace cam_aforge1
 
                     if (point[0] == 6)//free drawing
                     {
+                        SolidBrush bloodBrush = new SolidBrush(Color.FromArgb(point[3], 131, 3, 3));
                         int i;
                         int tic;
                         for (i = 2; 2 * i + 1 < point.Length && point[2 * i + 1] >= 0; i++) 
                         {
                             tic = tickCount - point[1];
-                            myCanvas.g.FillEllipse(new SolidBrush(Color.FromArgb(point[3], 131, 3, 3)), point[2 * i] - (float)(tic * .5 + point[2] / 2.0), point[2 * i + 1] - (float)(tic * .5 + point[2] / 2.0), (float)(tic * 1 + point[2]), (float)(tic * 1 + point[2]));
+                            myCanvas.g.FillEllipse(bloodBrush, point[2 * i] - (float)(tic * .5 + point[2] / 2.0), point[2 * i + 1] - (float)(tic * .5 + point[2] / 2.0), (float)(tic * 1 + point[2]), (float)(tic * 1 + point[2]));
                         }
                     }
                     if (point[0] == 1)//draw line
@@ -291,7 +292,7 @@ namespace cam_aforge1
             }
             catch 
             {
-
+                drawinglock = 0;
             }
 
         }
