@@ -66,10 +66,10 @@ namespace cam_aforge1
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.viewFinder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.viewFinder.Location = new System.Drawing.Point(261, 11);
-            this.viewFinder.Margin = new System.Windows.Forms.Padding(4);
+            this.viewFinder.Location = new System.Drawing.Point(294, 14);
+            this.viewFinder.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.viewFinder.Name = "viewFinder";
-            this.viewFinder.Size = new System.Drawing.Size(922, 585);
+            this.viewFinder.Size = new System.Drawing.Size(1037, 731);
             this.viewFinder.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.viewFinder.TabIndex = 0;
             this.viewFinder.TabStop = false;
@@ -77,28 +77,28 @@ namespace cam_aforge1
             // vidSrc
             // 
             this.vidSrc.FormattingEnabled = true;
-            this.vidSrc.Location = new System.Drawing.Point(16, 32);
-            this.vidSrc.Margin = new System.Windows.Forms.Padding(4);
+            this.vidSrc.Location = new System.Drawing.Point(18, 40);
+            this.vidSrc.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.vidSrc.Name = "vidSrc";
-            this.vidSrc.Size = new System.Drawing.Size(208, 24);
+            this.vidSrc.Size = new System.Drawing.Size(234, 28);
             this.vidSrc.TabIndex = 1;
             // 
             // vidSrcLabel
             // 
             this.vidSrcLabel.AutoSize = true;
-            this.vidSrcLabel.Location = new System.Drawing.Point(12, 11);
+            this.vidSrcLabel.Location = new System.Drawing.Point(14, 14);
             this.vidSrcLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.vidSrcLabel.Name = "vidSrcLabel";
-            this.vidSrcLabel.Size = new System.Drawing.Size(132, 17);
+            this.vidSrcLabel.Size = new System.Drawing.Size(147, 20);
             this.vidSrcLabel.TabIndex = 2;
             this.vidSrcLabel.Text = "Select video source";
             // 
             // rfsh
             // 
-            this.rfsh.Location = new System.Drawing.Point(17, 76);
-            this.rfsh.Margin = new System.Windows.Forms.Padding(4);
+            this.rfsh.Location = new System.Drawing.Point(19, 95);
+            this.rfsh.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rfsh.Name = "rfsh";
-            this.rfsh.Size = new System.Drawing.Size(91, 38);
+            this.rfsh.Size = new System.Drawing.Size(102, 48);
             this.rfsh.TabIndex = 3;
             this.rfsh.Text = "&Refresh";
             this.rfsh.UseVisualStyleBackColor = true;
@@ -106,10 +106,10 @@ namespace cam_aforge1
             // 
             // start
             // 
-            this.start.Location = new System.Drawing.Point(135, 76);
-            this.start.Margin = new System.Windows.Forms.Padding(4);
+            this.start.Location = new System.Drawing.Point(152, 95);
+            this.start.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.start.Name = "start";
-            this.start.Size = new System.Drawing.Size(91, 38);
+            this.start.Size = new System.Drawing.Size(102, 48);
             this.start.TabIndex = 4;
             this.start.Text = "&Start";
             this.start.UseVisualStyleBackColor = true;
@@ -118,21 +118,21 @@ namespace cam_aforge1
             // fps
             // 
             this.fps.Controls.Add(this.label2);
-            this.fps.Location = new System.Drawing.Point(16, 177);
-            this.fps.Margin = new System.Windows.Forms.Padding(4);
+            this.fps.Location = new System.Drawing.Point(18, 221);
+            this.fps.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.fps.Name = "fps";
-            this.fps.Padding = new System.Windows.Forms.Padding(4);
-            this.fps.Size = new System.Drawing.Size(207, 34);
+            this.fps.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.fps.Size = new System.Drawing.Size(233, 42);
             this.fps.TabIndex = 6;
             this.fps.TabStop = false;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(4, 14);
+            this.label2.Location = new System.Drawing.Point(4, 18);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 17);
+            this.label2.Size = new System.Drawing.Size(108, 20);
             this.label2.TabIndex = 0;
             this.label2.Text = "Device ready..";
             // 
@@ -143,10 +143,10 @@ namespace cam_aforge1
             // 
             // ctrl
             // 
-            this.ctrl.Location = new System.Drawing.Point(17, 122);
-            this.ctrl.Margin = new System.Windows.Forms.Padding(4);
+            this.ctrl.Location = new System.Drawing.Point(19, 152);
+            this.ctrl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ctrl.Name = "ctrl";
-            this.ctrl.Size = new System.Drawing.Size(91, 38);
+            this.ctrl.Size = new System.Drawing.Size(102, 48);
             this.ctrl.TabIndex = 7;
             this.ctrl.Text = "&Control";
             this.ctrl.UseVisualStyleBackColor = true;
@@ -154,10 +154,10 @@ namespace cam_aforge1
             // 
             // Circle
             // 
-            this.Circle.Location = new System.Drawing.Point(17, 314);
+            this.Circle.Location = new System.Drawing.Point(18, 382);
             this.Circle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Circle.Name = "Circle";
-            this.Circle.Size = new System.Drawing.Size(91, 38);
+            this.Circle.Size = new System.Drawing.Size(102, 48);
             this.Circle.TabIndex = 10;
             this.Circle.Text = "Circle";
             this.Circle.UseVisualStyleBackColor = true;
@@ -167,19 +167,20 @@ namespace cam_aforge1
             // 
             this.countLabel.AutoSize = true;
             this.countLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.75F);
-            this.countLabel.Location = new System.Drawing.Point(133, 410);
+            this.countLabel.Location = new System.Drawing.Point(150, 512);
             this.countLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.countLabel.Name = "countLabel";
-            this.countLabel.Size = new System.Drawing.Size(93, 16);
+            this.countLabel.Size = new System.Drawing.Size(107, 20);
             this.countLabel.TabIndex = 11;
             this.countLabel.Text = "Blood Opacity";
             this.countLabel.Click += new System.EventHandler(this.countLabel_Click);
             // 
             // Pen
             // 
-            this.Pen.Location = new System.Drawing.Point(17, 227);
+            this.Pen.Location = new System.Drawing.Point(17, 272);
+            this.Pen.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Pen.Name = "Pen";
-            this.Pen.Size = new System.Drawing.Size(91, 38);
+            this.Pen.Size = new System.Drawing.Size(102, 48);
             this.Pen.TabIndex = 14;
             this.Pen.Text = "Pen";
             this.Pen.UseVisualStyleBackColor = true;
@@ -187,9 +188,10 @@ namespace cam_aforge1
             // 
             // Line
             // 
-            this.Line.Location = new System.Drawing.Point(17, 271);
+            this.Line.Location = new System.Drawing.Point(17, 328);
+            this.Line.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Line.Name = "Line";
-            this.Line.Size = new System.Drawing.Size(91, 38);
+            this.Line.Size = new System.Drawing.Size(102, 48);
             this.Line.TabIndex = 14;
             this.Line.Text = "Line";
             this.Line.UseVisualStyleBackColor = true;
@@ -197,9 +199,10 @@ namespace cam_aforge1
             // 
             // Undo
             // 
-            this.Undo.Location = new System.Drawing.Point(132, 227);
+            this.Undo.Location = new System.Drawing.Point(148, 284);
+            this.Undo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Undo.Name = "Undo";
-            this.Undo.Size = new System.Drawing.Size(91, 38);
+            this.Undo.Size = new System.Drawing.Size(102, 48);
             this.Undo.TabIndex = 15;
             this.Undo.Text = "Undo";
             this.Undo.UseVisualStyleBackColor = true;
@@ -207,9 +210,10 @@ namespace cam_aforge1
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(16, 469);
+            this.button1.Location = new System.Drawing.Point(18, 575);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 38);
+            this.button1.Size = new System.Drawing.Size(101, 48);
             this.button1.TabIndex = 16;
             this.button1.Text = "Object";
             this.button1.UseVisualStyleBackColor = true;
@@ -217,11 +221,11 @@ namespace cam_aforge1
             // 
             // trackbar1
             // 
-            this.trackbar1.Location = new System.Drawing.Point(114, 381);
+            this.trackbar1.Location = new System.Drawing.Point(128, 476);
             this.trackbar1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.trackbar1.Maximum = 100;
             this.trackbar1.Name = "trackbar1";
-            this.trackbar1.Size = new System.Drawing.Size(140, 56);
+            this.trackbar1.Size = new System.Drawing.Size(158, 69);
             this.trackbar1.SmallChange = 10;
             this.trackbar1.TabIndex = 18;
             this.trackbar1.Value = 30;
@@ -229,10 +233,10 @@ namespace cam_aforge1
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(16, 356);
+            this.button3.Location = new System.Drawing.Point(17, 434);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(92, 38);
+            this.button3.Size = new System.Drawing.Size(104, 48);
             this.button3.TabIndex = 19;
             this.button3.Text = "Blood";
             this.button3.UseVisualStyleBackColor = true;
@@ -242,23 +246,24 @@ namespace cam_aforge1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.75F);
-            this.label1.Location = new System.Drawing.Point(20, 450);
+            this.label1.Location = new System.Drawing.Point(22, 551);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 16);
+            this.label1.Size = new System.Drawing.Size(69, 20);
             this.label1.TabIndex = 11;
             this.label1.Text = "Tracking";
             this.label1.Click += new System.EventHandler(this.countLabel_Click);
             // 
             // trackBar2
             // 
-            this.trackBar2.Location = new System.Drawing.Point(114, 314);
+            this.trackBar2.Location = new System.Drawing.Point(128, 392);
             this.trackBar2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.trackBar2.Maximum = 30;
+            this.trackBar2.Maximum = 150;
             this.trackBar2.Name = "trackBar2";
-            this.trackBar2.Size = new System.Drawing.Size(140, 56);
+            this.trackBar2.Size = new System.Drawing.Size(158, 69);
+            this.trackBar2.SmallChange = 10;
             this.trackBar2.TabIndex = 20;
-            this.trackBar2.Value = 10;
+            this.trackBar2.Value = 50;
             this.trackBar2.Scroll += new System.EventHandler(this.trackBar2_Scroll);
             // 
             // colorDialog1
@@ -267,9 +272,10 @@ namespace cam_aforge1
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(17, 399);
+            this.button2.Location = new System.Drawing.Point(18, 488);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(91, 38);
+            this.button2.Size = new System.Drawing.Size(102, 48);
             this.button2.TabIndex = 21;
             this.button2.Text = "Color";
             this.button2.UseVisualStyleBackColor = true;
@@ -279,19 +285,20 @@ namespace cam_aforge1
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.75F);
-            this.label4.Location = new System.Drawing.Point(133, 354);
+            this.label4.Location = new System.Drawing.Point(150, 442);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 16);
+            this.label4.Size = new System.Drawing.Size(85, 20);
             this.label4.TabIndex = 11;
             this.label4.Text = "Blood Size";
             this.label4.Click += new System.EventHandler(this.countLabel_Click);
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(17, 538);
+            this.button4.Location = new System.Drawing.Point(17, 644);
+            this.button4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(91, 38);
+            this.button4.Size = new System.Drawing.Size(102, 48);
             this.button4.TabIndex = 22;
             this.button4.Text = "Save";
             this.button4.UseVisualStyleBackColor = true;
@@ -303,9 +310,9 @@ namespace cam_aforge1
             // 
             // GUI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 612);
+            this.ClientSize = new System.Drawing.Size(1350, 804);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
@@ -326,7 +333,7 @@ namespace cam_aforge1
             this.Controls.Add(this.vidSrc);
             this.Controls.Add(this.viewFinder);
             this.Controls.Add(this.trackBar2);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "GUI";
             this.Text = "Orthoscope/Arthroscope Camera";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);

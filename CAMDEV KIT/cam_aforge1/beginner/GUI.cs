@@ -200,26 +200,29 @@ namespace cam_aforge1
                     for( i=0; i < trackings.Length && 0 <= trackings[i].X; i++)
                     {
                     }
-                    Point[] drawtracking = new Point[i-1];
-                    int j=0;
-                    for ( i = 0; i < drawtracking.Length; j++)
+                    if (i > 1)
                     {
-                        drawtracking[j] = trackings[i];
-                        //if (i + 2 < drawtracking.Length && 10+3*Math.Abs(trackings[i + 2].X - trackings[i].X) + 3*Math.Abs(trackings[i + 2].Y - trackings[i].Y) - Math.Abs(trackings[i + 1].X - trackings[i].X) - Math.Abs(trackings[i + 1].Y - trackings[i].Y) < 0)
-                        //{
-                         //   i++;
-                        //}
-                        i++;
+                        Point[] drawtracking = new Point[i - 1];
+                        int j = 0;
+                        for (i = 0; i < drawtracking.Length; j++)
+                        {
+                            drawtracking[j] = trackings[i];
+                            //if (i + 2 < drawtracking.Length && 10+3*Math.Abs(trackings[i + 2].X - trackings[i].X) + 3*Math.Abs(trackings[i + 2].Y - trackings[i].Y) - Math.Abs(trackings[i + 1].X - trackings[i].X) - Math.Abs(trackings[i + 1].Y - trackings[i].Y) < 0)
+                            //{
+                            //   i++;
+                            //}
+                            i++;
+                        }
+                        /*for (i = 0; i<drawtracking.Length && 0 < drawtracking[i].X; i++)
+                        {
+                        }
+                        Point[] drawtracking2 = new Point[i - 1];
+                        for (i = 0; i < drawtracking2.Length; i++)
+                        {
+                            drawtracking2[i] = drawtracking[i];
+                        }*/
+                        myCanvas.g.DrawLines(objPen, drawtracking);
                     }
-                    /*for (i = 0; i<drawtracking.Length && 0 < drawtracking[i].X; i++)
-                    {
-                    }
-                    Point[] drawtracking2 = new Point[i - 1];
-                    for (i = 0; i < drawtracking2.Length; i++)
-                    {
-                        drawtracking2[i] = drawtracking[i];
-                    }*/
-                    myCanvas.g.DrawLines(objPen, drawtracking);
                 }
 
                 
@@ -242,8 +245,7 @@ namespace cam_aforge1
                             myCanvas.g.DrawLines(drawingPen, curve);
                         }
                     }
-
-                    if (point[0] == 6)//free drawing
+                    else if (point[0] == 6)//free drawing
                     {
                         SolidBrush bloodBrush = new SolidBrush(Color.FromArgb(point[3], 131, 3, 3));
                         int i;
@@ -254,11 +256,11 @@ namespace cam_aforge1
                             myCanvas.g.FillEllipse(bloodBrush, point[2 * i] - (float)(tic * .5 + point[2] / 2.0), point[2 * i + 1] - (float)(tic * .5 + point[2] / 2.0), (float)(tic * 1 + point[2]), (float)(tic * 1 + point[2]));
                         }
                     }
-                    if (point[0] == 1)//draw line
+                    else if (point[0] == 1)//draw line
                     {
                         myCanvas.g.DrawLine(drawingPen, point[1], point[2], point[3], point[4]);
                     }
-                    if (point[0] == 2)//draw circle
+                    else if (point[0] == 2)//draw circle
                     {
                         myCanvas.g.DrawEllipse(drawingPen, point[1] - point[3], point[2] - point[3], 2 * point[3], 2 * point[3]);
                     }
@@ -290,8 +292,9 @@ namespace cam_aforge1
                 drawinglock = 0;
 
             }
-            catch 
+            catch
             {
+                myCanvas.g.Dispose();
                 drawinglock = 0;
             }
 
@@ -504,6 +507,7 @@ namespace cam_aforge1
 
             }
             drawinglock = 0;
+            return;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -583,7 +587,7 @@ namespace cam_aforge1
 
                     //Draw the matched keypoints
 
-                    Features2DToolbox.DrawMatches(objImage, objKeyPoints, observedImage, observedKeyPoints, matches, result, new MCvScalar(255, 255, 255), new MCvScalar(255, 255, 255), mask);
+                    Features2DToolbox.DrawMatches(objImage, objKeyPoints, observedImage, observedKeyPoints, matches, result, new MCvScalar(255, 255, 255), new MCvScalar(255, 255, 255), mask,Features2DToolbox.KeypointDrawType.NotDrawSinglePoints);
                     //Bgr rgb5 = new Bgr(250, 250, 250);
                     //Features2DToolbox.DrawKeypoints(observedImage, observedKeyPoints, observedImage, rgb5);
                     int i;
@@ -599,34 +603,45 @@ namespace cam_aforge1
                             count++;
                         }
                     }
-                    X = X / count + (float)(objwidth / 2.0);
-                    Y = Y / count + (float)(objheight / 2.0);
 
-                   
-                    if (trackings[trackings.Length - 1].X >= 0)
+                    if (count > 0)
                     {
-                        Point[] newtrackings = new Point[2 * trackings.Length + 1];
-                        for (i = 0; i < trackings.Length; i++)
-                        {
-                            newtrackings[i] = trackings[i];
-                        }
-                        newtrackings[i].X = (int)X;
-                        newtrackings[i].Y = (int)Y;
-                        for (i++; i < newtrackings.Length; i++)
-                        {
-                            newtrackings[i].X = -1;
-                            newtrackings[i].Y = -1;
-                        }
-                        trackings = newtrackings;
+                        X = X / count + (float)(Math.Abs(objwidth / 2.0));
+                        Y = Y / count + (float)(Math.Abs(objheight / 2.0));
                     }
                     else
                     {
-                        for (i = 0; trackings[i].X >= 0; i++)
-                        {
-                        }
-                        trackings[i].X = (int)X;
-                        trackings[i].Y = (int)Y;
+                        X = -1;
+                        Y = -1;
                     }
+                    if (CvInvoke.CountNonZero(mask)>10)
+                    {
+                        if (trackings[trackings.Length - 1].Y >= 0)
+                        {
+                            Point[] newtrackings = new Point[2 * trackings.Length + 1];
+                            for (i = 0; i < trackings.Length; i++)
+                            {
+                                newtrackings[i] = trackings[i];
+                            }
+                            newtrackings[i].X = (int)X;
+                            newtrackings[i].Y = (int)Y;
+                            for (i++; i < newtrackings.Length; i++)
+                            {
+                                newtrackings[i].X = -1;
+                                newtrackings[i].Y = -1;
+                            }
+                            trackings = newtrackings;
+                        }
+                        else
+                        {
+                            for (i = 0; trackings[i].Y >= 0; i++)
+                            {
+                            }
+                            trackings[i].X = (int)X;
+                            trackings[i].Y = (int)Y;
+                        }
+                    }
+                    
 
                     if (homography != null)
                     {
@@ -650,7 +665,7 @@ namespace cam_aforge1
                            }
                     }
                     float a = 2;
-                    CvInvoke.Ellipse(result, new RotatedRect(new PointF(X, Y), new SizeF(10, 10), a), new MCvScalar(0, 250, 255, 255));
+                    CvInvoke.Ellipse(result, new RotatedRect(new PointF(X, Y), new SizeF(30, 30), a), new MCvScalar(0, 250, 255, 255),4);
 
                     return result;
                 }
